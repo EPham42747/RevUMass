@@ -1,38 +1,105 @@
-/*setting up grid layout*/
-header {
-  max-height: 10vh;
-  text-align: left;
-  font-size: 2vw;
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+button {
+  margin: 3vw;
+  padding: 1vw;
+}
+
+h1 {
   padding: 1%;
 }
-main {
-  grid-area: bio;
-  text-align:center;
-  font-size: 2vw;
-  padding-bottom: 7%;
+section {
+  padding-bottom: 1%;
 }
 nav {
-  grid-area: nav;
-  max-height: 40vh;
-  width: 100vw;
-  display: inline-block;
-  padding-left: 25vw;
   justify-content: center;
 }
-footer {
-  font-size: 0.9vw;
-  text-align: center;
-  padding-top: 7%;
-}
+
 .grid-container {
   display: grid;
   grid-template:  
-  'header'
-  'nav'
-  '. main main main .'
-  '. main main main .'
-  'footer';
+  'h1 nav'
+  '. section';
   justify-items: center;
   grid-gap: 10px;
   padding: 10px;
+}
+
+/* Hide both by default and only show after media querey */
+.desktop-layout {
+  display: none;
+}
+
+.mobile-layout {
+  display: none;
+}
+
+/* Media Queries for Different Screen Sizes, don't ask how I did this, Blood Sweat and Tears*/
+@media (min-width: 768px) {
+  .desktop-layout {
+    display: block; /* Show desktop layout for screens wider than 768px */
+  }
+  .mobile-layout {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-layout {
+    display: block; /* Show mobile layout for screens narrower than 768px */
+  }
+  .desktop-layout {
+    display: none;
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.hamburger-icon {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 40px; /* Adjust to the height of the button */
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  border-radius: 4px;
+  z-index: 1000;
+  width: 150px; /* Adjust width as needed */
+}
+
+.menu-button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu-button:hover {
+  background-color: #f0f0f0;
 }
