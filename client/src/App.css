@@ -15,9 +15,30 @@ button {
   padding: 1vw;
 }
 
-h1 {
-  padding: 1%;
+.h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  z-index: 1000; /* Ensures it stays above other content */
 }
+
+.header h1 {
+  margin: 0;
+}
+
+.header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+
 section {
   padding-bottom: 1%;
 }
@@ -25,29 +46,26 @@ nav {
   justify-content: center;
 }
 
-.grid-container {
+/* Hide both by default and only show after media querey */
+.desktop-layout {
+  display: grid;
+}
+
+.mobile-layout {
   display: grid;
   grid-template:  
   'h1 nav'
-  '. section';
+  '. section'
+  'footer footer';
   justify-items: center;
   grid-gap: 10px;
   padding: 10px;
 }
 
-/* Hide both by default and only show after media querey */
-.desktop-layout {
-  display: none;
-}
-
-.mobile-layout {
-  display: none;
-}
-
 /* Media Queries for Different Screen Sizes, don't ask how I did this, Blood Sweat and Tears*/
 @media (min-width: 768px) {
   .desktop-layout {
-    display: block; /* Show desktop layout for screens wider than 768px */
+    display: grid; /* Show desktop layout for screens wider than 768px */
   }
   .mobile-layout {
     display: none;
@@ -56,7 +74,7 @@ nav {
 
 @media (max-width: 767px) {
   .mobile-layout {
-    display: block; /* Show mobile layout for screens narrower than 768px */
+    display: grid; /* Show mobile layout for screens narrower than 768px */
   }
   .desktop-layout {
     display: none;
@@ -67,11 +85,11 @@ nav {
 .hamburger-menu {
   position: relative;
   display: inline-block;
-  margin: 20px;
+  margin: 10%;
 }
 
 .hamburger-icon {
-  font-size: 30px;
+  font-size: 220%;
   background: none;
   border: none;
   cursor: pointer;
@@ -79,13 +97,13 @@ nav {
 
 .menu-dropdown {
   position: absolute;
-  top: 40px; /* Adjust to the height of the button */
-  left: 0;
+  top: 70%; /* Adjust to the height of the button */
+  left: -150%;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  border-radius: 4px;
-  z-index: 1000;
+  padding: 10%;
+  border-radius: 10%;
+  z-index: 0;
   width: 150px; /* Adjust width as needed */
 }
 
@@ -102,4 +120,6 @@ nav {
 
 .menu-button:hover {
   background-color: #f0f0f0;
+  width: 85%;
+  border-radius: 10%;
 }

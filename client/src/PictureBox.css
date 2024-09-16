@@ -1,0 +1,26 @@
+.picture-box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px;
+  }
+  
+  .picture-box-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .picture-box-title {
+    font-size: 1.5em;
+    margin: 10px 0 5px;
+  }
+  
+  .picture-box-description {
+    font-size: 1em;
+    color: #666;
+  }
+  
