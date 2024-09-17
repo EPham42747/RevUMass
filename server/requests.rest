@@ -1,0 +1,25 @@
+GET http://localhost:3001/
+###
+GET http://localhost:3001/home
+###
+GET http://localhost:3001/food
+###
+GET http://localhost:3001/dorms
+###
+GET http://localhost:3001/spots
+###
+GET http://localhost:3001/contribute
+###
+POST http://localhost:3001/food/add/
+Content-Type: application/json
+
+{
+  "author": "66e8c05aa3c76509afcb1034",
+  "item": "66e8bfdba3c76509afcb1033",
+  "rating": 4,
+  "review": "so good"
+}
+
+###
+
+GET http://localhost:3001/food/66e8bfdba3c76509afcb1065
