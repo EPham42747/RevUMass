@@ -1,0 +1,35 @@
+GET http://localhost:3001/food/
+
+###
+POST http://localhost:3001/review/add
+Content-Type: application/json
+
+{
+  "author": "66e8c05aa3c76509afcb1034",
+  "item": "66e8bfdba3c76509afcb1033",
+  "rating": 4,
+  "review": "not bad!"
+}
+
+###
+GET http://localhost:3001/food/66ea2244b029a96ee453fd8c/
+
+###
+PUT http://localhost:3001/review/66eb1b2537e8362ce2bb7106/edit
+Content-Type: application/json
+
+{
+  "userId": "66e8c05aa3c76509afcb1034",
+  "data": {
+    "rating": 3,
+    "review": "it's alright"
+  }
+}
+
+###
+DELETE http://localhost:3001/review/66eb4667b8cf8a7bee6b1460/delete
+Content-Type: application/json
+
+{
+  "userId": "66e8c05aa3c76509afcb1034"
+}

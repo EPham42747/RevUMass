@@ -5,12 +5,7 @@ const foodController = require('../controllers/foodController');
 
 router.use(express.json());
 
-router.get('/', (req, res) => {
-  foodController.getAllFood();
-});
-
-router.post('/add', foodController.addReview);
-
-router.get('/:id', foodController.getFoodById);
+router.get('/', foodController.getAllFood);
+router.get('/:foodId', foodController.getFoodById);
 
 module.exports = router;
