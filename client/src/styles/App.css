@@ -20,8 +20,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
-  color: white;
+  background-color: #ff0000;
   padding: 10px;
   z-index: 1000; /* Ensures it stays above other content */
 }
@@ -41,9 +40,6 @@ button {
 
 section {
   padding-bottom: 1%;
-}
-nav {
-  justify-content: center;
 }
 
 /* Hide both by default and only show after media querey */
@@ -79,47 +75,4 @@ nav {
   .desktop-layout {
     display: none;
   }
-}
-
-/* Hamburger Menu Styles */
-.hamburger-menu {
-  position: relative;
-  display: inline-block;
-  margin: 10%;
-}
-
-.hamburger-icon {
-  font-size: 220%;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-dropdown {
-  position: absolute;
-  top: 70%; /* Adjust to the height of the button */
-  left: -150%;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10%;
-  border-radius: 10%;
-  z-index: 0;
-  width: 150px; /* Adjust width as needed */
-}
-
-.menu-button {
-  display: block;
-  width: 100%;
-  padding: 10px 20px;
-  text-align: left;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.menu-button:hover {
-  background-color: #f0f0f0;
-  width: 85%;
-  border-radius: 10%;
 }

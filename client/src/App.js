@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PictureBox from './PictureBox'; // Import PictureBox component
-import "./App.css"; // Make sure to import your CSS
+import PictureBox from './compontents/PictureBox'; // Import PictureBox component
+import HamburgerMenu from "./compontents/HamburgerMenu"; // Import HamburgerMenu component
+import "./styles/App.css"; // Make sure to import your CSS
 
 function App() {
   const [items, setItems] = useState([]);
@@ -9,12 +10,15 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('128.119.202.9:3001/'); // Assume you have an API endpoint to fetch MongoDB data
-        const data = await response.json();
-        console.log(data);
-        setItems(data); // Set data to state
+        const response_food = await fetch('http://172.31.128.6:3001/food/');
+        const response_reviews = await fetch('http://172.31.128.6:3001/review/66eb1b2537e8362ce2bb7106/'); // Assume you have an API endpoint to fetch MongoDB data
+        const data_food = await response_food.json();
+        const data_reviews = await response_reviews.json();
+        console.log(data_food);
+        console.log(data_reviews);
+        setItems(data_food); // Set data to state
       } catch (error) {
-        console.error("Error fetching data: ", error);
+        console.error("Error fetching data HELLO: ", error);
       }
     };
 
@@ -25,7 +29,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      <main class="background">
+      <main>
         {/* Use different containers for mobile and desktop */}
         <div className="desktop-layout">
           {/* Desktop specific layout components */}
@@ -43,7 +47,7 @@ function App() {
                 key={index}
                 image={item.imageUrl}
                 title={item.title}
-                description={item.description}
+                description={item._id}
               />
             ))}
           </section>
@@ -52,28 +56,5 @@ function App() {
     </div>
   );
 }
-
-const HamburgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  return (
-    <div className="hamburger-menu">
-      <button className="hamburger-icon" onClick={toggleMenu}>
-        ☰
-      </button>
-      {isOpen && (
-        <div className="menu-dropdown">
-          <button className="menu-button">Food</button>
-          <button className="menu-button">Study Spots</button>
-          <button className="menu-button">Dorms</button>
-        </div>
-      )}
-    </div>
-  );
-};
 
 export default App;

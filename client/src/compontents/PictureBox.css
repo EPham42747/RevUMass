@@ -1,10 +1,10 @@
 .picture-box {
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 50%;
     margin: 20px;
   }
   
@@ -21,6 +21,6 @@
   
   .picture-box-description {
     font-size: 1em;
-    color: #666;
+    color: #ff6060;
   }
   
