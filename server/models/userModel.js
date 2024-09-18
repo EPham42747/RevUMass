@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   reviews: {
-    type: [Number],
+    type: [mongoose.SchemaTypes.ObjectId],
     required: true,
   },
   dateAccountCreated: {
