@@ -11,8 +11,9 @@ body {
 }
 
 button {
-  margin: 3vw;
-  padding: 1vw;
+  margin: 3%;
+  padding: 3%;
+  border-radius: 15%;
 }
 
 .h1 {
@@ -21,20 +22,23 @@ button {
   left: 0;
   width: 100%;
   background-color: #ff0000;
-  padding: 10px;
+  padding: 10%;
   z-index: 1000; /* Ensures it stays above other content */
 }
 
 .header h1 {
-  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 10%;
 }
 
 .header nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline;
+  justify-content: center;
 }
 
 
@@ -50,7 +54,8 @@ section {
 .mobile-layout {
   display: grid;
   grid-template:  
-  'h1 nav'
+  'h1 .'
+  'nav'
   '. section'
   'footer footer';
   justify-items: center;

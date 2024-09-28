@@ -39,7 +39,9 @@ function App() {
           {/* Mobile specific layout components */}
           <h1>RevUMass</h1>
           <nav>
-            <HamburgerMenu />
+            <button>Food</button>
+            <button>Dorms</button>
+            <button>Study Spots</button>
           </nav>
           <section className="picture-box-container">
             {items.map((item, index) => (
