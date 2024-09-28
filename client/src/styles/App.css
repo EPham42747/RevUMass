@@ -11,39 +11,35 @@ body {
 }
 
 button {
-  margin: 3%;
-  padding: 3%;
-  border-radius: 15%;
+  padding: 5px 10px; /* Reduced padding for a thinner look */
+  margin: 3px;
+  font-size: 12px;   /* Adjusted font size */
+  border: 1px solid #ccc; /* Optional: Add a border to make it look sharper */
+  background-color: #f0f0f0; /* Optional: Background color */
 }
 
-.h1 {
+.fixed_header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ff0000;
-  padding: 10%;
+  height: 24%;
+  background-image: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%);
+  padding: 1%;
   z-index: 1000; /* Ensures it stays above other content */
 }
 
-.header h1 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 10%;
+.button-container {
+  display: flex;
+  justify-content: center; /* This spreads the buttons evenly */
 }
-
-.header nav ul {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: inline;
-  justify-content: center;
-}
-
 
 section {
   padding-bottom: 1%;
+}
+
+h1 {
+  font-size: 5vh;
 }
 
 /* Hide both by default and only show after media querey */

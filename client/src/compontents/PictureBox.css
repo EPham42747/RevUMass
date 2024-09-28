@@ -1,11 +1,19 @@
+.picture-box-container {
+  display: flex;
+  margin-top: 40%; /* Same as the header's height */
+  flex-wrap: wrap; /* Allows wrapping to the next line when there's no space */
+  justify-content: space-between; /* Spreads the boxes with space between them */
+}
+
 .picture-box {
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    width: 100%;
-    max-width: 50%;
-    margin: 20px;
+    width: 90%;
+    max-width: 100%;
+    flex: 1 1 calc(50% - 20px); /* Makes each box take up 50% width, minus some space */
+    margin: 10px; /* Add margin to create spacing between the boxes */
   }
   
   .picture-box-image {
