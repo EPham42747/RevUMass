@@ -132,3 +132,7 @@ dist
 
 # VSCode settings
 .vscode
+
+# Custom
+config.json
+data_tools/data
