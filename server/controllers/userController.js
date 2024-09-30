@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const User = require('../models/userModel');
+const User = require('../models/User');
 
 // Updates user's reviews list to reflect added review
 // Primarily used in conjunction with foodController.addReview()

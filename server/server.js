@@ -1,14 +1,13 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const { Sequelize } = require('sequelize');
 const cors = require('cors');
 
-const login = require('./routes/login');
-const home = require('./routes/home');
-const contribute = require('./routes/contribute');
-const food = require('./routes/food');
-const dorms = require('./routes/dorms');
-const studySpots = require('./routes/studySpots');
-const reviews = require('./routes/reviews');
+const { sequelize } = require('./models/db');
+
+const home = require('./routes/homeRoutes');
+const food = require('./routes/foodRoutes');
+const dorms = require('./routes/dormRoutes');
+const studySpots = require('./routes/studySpotRoutes');
 
 const errorHandler = require('./middleware/errorHandler');
 
@@ -17,18 +16,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// app.use('/', login);
-// app.use('/home', home);
-// app.use('/contribute', contribute);
+// app.use('/', home);
 app.use('/food', food);
 // app.use('/dorms', dorms);
 // app.use('/studySpots', studySpots);
-app.use('/review', reviews);
 
 app.use(errorHandler);
 
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect(process.env.DB_URI).then(() => console.log('Connected to MongoDb'));
+  sequelize.authenticate().then(() => console.log('Connected to Neon')).then(() => sequelize.sync());
   const server = app.listen(process.env.PORT || 3001, () => { console.log('Server started on port 3001') });
 
   const shutdown = (signal) => {

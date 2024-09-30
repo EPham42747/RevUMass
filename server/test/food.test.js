@@ -1,18 +1,19 @@
 const path = require('path');
 const request = require('supertest');
-const mongoose = require('mongoose');
+const { Sequelize } = require('sequelize');
 const app = require('../server');
+const sequelize = require('../config/database');
 
 require('dotenv').config({ debug: true, path: path.resolve(__dirname, '../config/.env.test') })
 
 describe('Food API', () => {
   beforeAll(async () => {
-    await mongoose.connect(process.env.DB_URI);
-    console.log(process.env.DB_URI);
+    const sequelize = new Sequelize(process.env.DATABASE_URL);
+    await sequelize.authenticate();
   });
 
   afterAll(async () => {
-    await mongoose.connection.close();
+    await sequelize.close();
   });
   
   it('GET /food should return food items', async () => {
