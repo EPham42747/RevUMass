@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 
-class Food extends Model {}
-
-Food.init({
+const Food = sequelize.define(
+  'Food',
+  {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,

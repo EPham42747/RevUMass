@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const DormArea = require('./DormArea');
 
-class Dorm extends Model {}
-
-Dorm.init({
+const Dorm = sequelize.define(
+  'Dorms', 
+  {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,

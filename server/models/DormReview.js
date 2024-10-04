@@ -3,9 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 const User = require('./User');
 const Dorm = require('./Dorm');
 
-class DormReview extends Model {}
-
-DormReview.init({
+const DormReview = sequelize.define(
+  'DormReview',
+  {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
