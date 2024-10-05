@@ -1,26 +1,25 @@
-const { DataTypes } = require('sequelize');
+const sequelize = require('sequelize');
 
-class Food extends Model {}
+const Food = sequelize.define('Food', {
+  id: {
+    type: sequelize.DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  name: {
+    type: sequelize.DataTypes.STRING,
+    allowNull: false,
+  },
+  image: sequelize.DataTypes.STRING,
+  isActive: {
+    type: sequelize.DataTypes.BOOLEAN,
+    defaultValue: true,
+    allowNull: false,
+  },
+}, {
+  tableName: 'food',
+});
 
-Food.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    image: DataTypes.STRING,
-    isActive: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: true,
-      allowNull: false,
-    },
-  }, {
-    tableName: 'food',
-  }
-);
+Food.hasMany(FoodReview, { onDelete: 'SET NULL' });
 
 module.exports = Food;
